@@ -3,25 +3,24 @@ Flower myFlower2;
 Flower myFlower3;
 
 void setup() {
-  size(1600,1200);
+  size(800,600);
   background(#43AF76);
-  
-  int _r1= 60;
-  int _petals=7;
-  float _x=width/2;
-  float _y=height/2;
-  int _pc=#FFA000;
-  myFlower1 = new Flower(_r1,_petals,_x,_y,_pc);
-  myFlower2 = new Flower(_r1,_petals,_x+random(-100,100),_y,_pc);
-  myFlower3 = new Flower(_r1,_petals,_x+50,_y,_pc);
-
-//  myFlower2 = new Flower();
-//   myFlower3 = new Flower();
+  frameRate(30);
+  myFlower1 = new Flower(0,50,20,4, color(240,100,70),50);
+  myFlower2 = new Flower(0,100,30,5, color(70,240,100),100);
+  myFlower3 = new Flower(0,150,40,6, color(100,70,240),150);
 }
 
 void draw(){
+  background(#43AF76);
+  myFlower1.Bounce(100);
+  myFlower1.Velocity(3);
   myFlower1.display();
+  myFlower2.Bounce(75);
+  myFlower2.Velocity(2);
   myFlower2.display();
+  myFlower3.Bounce(50);
+  myFlower3.Velocity(1);
   myFlower3.display();
-  noLoop();
+  
 }
